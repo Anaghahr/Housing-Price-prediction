@@ -6,15 +6,12 @@ library(leaflet)
 shinyUI(
   fluidPage
   (theme = shinytheme("slate"), 
-    #setBackgroundImage(
-    #  src  = 'https://wallpapercave.com/wp/wp2464244.jpg'
-    #),
+  
     titlePanel("Horcrux Housing Price"),
     tabsetPanel(id="navbar",
                 
                 #HOME TAB            
                 tabPanel("HOME", 
-                         #setBackgroundImage(src  = 'https://wallpapercave.com/wp/wp2464244.jpg'),
                          sidebarLayout(
                            sidebarPanel( width = 3,
                                          tags$h2("Welcome to Horcrux Housing  Price "),
@@ -41,8 +38,6 @@ shinyUI(
                )
                ,
                mainPanel(
-                 #actionButton("play", "Play the Audio"),
-                 #actionButton("Play","Play"),
                  selectInput(inputId = "neigh",label = "Neighborhood",choices = list("Northridge" = 1,
                                                                                      "Northridge Heights" = 2,
                                                                                      "Clear Creek" = 3,
@@ -242,20 +237,12 @@ shinyUI(
                                                               "9" = 9,
                                                               "10" = 10))
                  )),
-               numericInput("num",label = "Enter your price",value = 0),
-               actionButton("play", "Play the Audio"),
-               #textInput("num","Enter your Budget"),
-               actionButton("submit", "SUBMIT"),
-               #actionButton("dummy","Dummy")
+               numericInput("num",label = "Enter your price",value = 0)
+               actionButton("submit", "SUBMIT")
                
-             ))
-           )
-
-  
-  
-    )      
-    
-    
+      ))
+     )
+   )  
   )
 )
 
