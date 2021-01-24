@@ -5,7 +5,7 @@ shinyServer(function(input, output) {
   
   cal <- reactive({
     
-    h <- read.csv("C:/Users/Abhilash/Desktop/House_train.csv")
+    h <- read.csv("./House_train.csv")
     h = h[complete.cases(h), ]
     
     name<- c( "BsmtFinSF1", "GrLivArea","TotalBsmtSF","MasVnrArea","WoodDeckSF")
@@ -66,18 +66,4 @@ Veenker,42.556712,-94.51578 ,36916.52406
     ))
   })
   
-  
-  observeEvent(input$submit, {
-    if(input$num <= cal()){
-    insertUI(selector = "#play",
-             where = "afterEnd",
-             ui = tags$audio(src = "negative.mp3", type = "audio/mp3", autoplay = NA, controls = NA, style="display:none;")  
-    )}
-    else
-    {
-      insertUI(selector = "#play",
-               where = "afterEnd",
-               ui=tags$audio(src = "positive.mp3", type = "audio/mp3", autoplay = NA, controls = NA, style="display:none;"))
-    }
-      })
 })
